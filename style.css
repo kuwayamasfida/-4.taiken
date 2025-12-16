@@ -2,7 +2,6 @@
 /* 💎 CSS 変数定義 */
 /* ======================== */
 :root {
-  --z-index-overlay: 2147483647;
   --video-aspect-ratio: 56.25%; /* 16:9 */
 
   /* ======================== */
@@ -12,8 +11,8 @@
   --cta-text-color: #fff;
   --cta-opacity-enabled: 0.6;
   --cta-opacity-disabled: 0.4;
-  --cta-padding-y: 14px;
-  --cta-padding-x: 120px;
+  --cta-padding-y: 20px;
+  --cta-padding-x: 100px;
   --cta-font-size: 18px;
   --cta-border-radius: 6px;
   --cta-bottom-position: 0%;
@@ -22,11 +21,11 @@
   /* ======================== */
   /* CTA：全画面時 */
   /* ======================== */
-  --cta-fs-padding-y: 80px;
-  --cta-fs-padding-x: 3200px;
+  --cta-fs-padding-y: 60px;
+  --cta-fs-padding-x: 320px;
   --cta-fs-font-size: 28px;
-  --cta-fs-bottom-position: 8%;
-  --cta-fs-gap:100px;
+  --cta-fs-bottom-position: 0%;
+  --cta-fs-gap: 60px;
 
   /* ======================== */
   /* Fullscreen */
@@ -79,7 +78,7 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: var(--z-index-overlay);
+  z-index: 20;
 }
 
 #btn-fullscreen {
@@ -102,10 +101,18 @@ body {
   transform: translateX(-50%);
   display: flex;
   gap: var(--cta-gap);
-  z-index: var(--z-index-overlay);
+
+  /* 🔑 シークバー優先 */
+  pointer-events: none;
+
+  /* video controls より下 */
+  z-index: 5;
 }
 
+/* CTAボタン本体だけクリック可能 */
 .cta-buttons-overlay-bottom button {
+  pointer-events: auto;
+
   padding: var(--cta-padding-y) var(--cta-padding-x);
   font-size: var(--cta-font-size);
   border-radius: var(--cta-border-radius);
@@ -116,7 +123,7 @@ body {
   opacity: var(--cta-opacity-enabled);
   transition: opacity 0.3s, background-color 0.3s;
 
-  /* 🔒 文字は常に横書き */
+  /* 常に横書き */
   writing-mode: horizontal-tb;
   text-orientation: mixed;
   white-space: nowrap;
