@@ -1,0 +1,132 @@
+/* ======================== */
+/* 💎 CSS 変数定義 */
+/* ======================== */
+:root {
+  --z-index-overlay: 2147483647;
+  --video-aspect-ratio: 56.25%; /* 16:9 */
+
+  /* CTA */
+  --cta-bg-color: #007bff;
+  --cta-text-color: #fff;
+  --cta-opacity-enabled: 0.85;
+  --cta-opacity-disabled: 0.4;
+  --cta-padding-y: 14px;
+  --cta-padding-x: 40px;
+  --cta-font-size: 18px;
+  --cta-border-radius: 6px;
+
+  /* CTA位置 */
+  --cta-bottom-position: 6%;
+
+  /* Fullscreen */
+  --fs-bg-color: #ff9900;
+  --fs-font-size: 14px;
+}
+
+/* ======================== */
+/* 基本 */
+/* ======================== */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f5f5f5;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #000;
+}
+
+/* ======================== */
+/* 動画 */
+/* ======================== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: var(--video-aspect-ratio);
+  background: #000;
+}
+
+#myVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ======================== */
+/* 全画面ボタン */
+/* ======================== */
+.fullscreen-button-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: var(--z-index-overlay);
+}
+
+#btn-fullscreen {
+  padding: 6px 12px;
+  font-size: var(--fs-font-size);
+  background: var(--fs-bg-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--cta-border-radius);
+  cursor: pointer;
+}
+
+/* ======================== */
+/* CTA（動画内・下部・横並び） */
+/* ======================== */
+.cta-buttons-overlay-bottom {
+  position: absolute;
+  left: 50%;
+  bottom: var(--cta-bottom-position);
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: var(--z-index-overlay);
+}
+
+.cta-buttons-overlay-bottom button {
+  padding: var(--cta-padding-y) var(--cta-padding-x);
+  font-size: var(--cta-font-size);
+  border-radius: var(--cta-border-radius);
+  border: 2px solid var(--cta-bg-color);
+  background: var(--cta-bg-color);
+  color: var(--cta-text-color);
+  cursor: pointer;
+  opacity: var(--cta-opacity-enabled);
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.cta-buttons-overlay-bottom button:disabled {
+  background: #aaa;
+  border-color: #aaa;
+  cursor: default;
+  opacity: var(--cta-opacity-disabled);
+}
+
+.cta-buttons-overlay-bottom button:not(:disabled):hover {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+
+/* ======================== */
+/* 全画面時 */
+/* ======================== */
+.video-wrapper:fullscreen {
+  padding-bottom: 0;
+  height: 100%;
+}
+
+.video-wrapper:fullscreen #myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
