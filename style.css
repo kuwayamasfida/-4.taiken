@@ -13,7 +13,7 @@
   --cta-opacity-disabled: 0.4;
 
   /* 🔑 サイズ固定 */
-  --cta-width: 200px;
+  --cta-width: 210px;
   --cta-height: 80px;
   --cta-font-size: 18px;
   
@@ -25,7 +25,7 @@
   /* CTA：全画面時 */
   /* ======================== */
   --cta-fs-width: 420px;
-  --cta-fs-height: 110px;
+  --cta-fs-height: 150px;
   --cta-fs-font-size: 28px;
   --cta-fs-bottom-position: 10%;
   --cta-fs-gap: 60px;
