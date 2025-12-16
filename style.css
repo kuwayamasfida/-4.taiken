@@ -11,9 +11,12 @@
   --cta-text-color: #fff;
   --cta-opacity-enabled: 0.6;
   --cta-opacity-disabled: 0.4;
-  --cta-padding-y: 25px;
-  --cta-padding-x: 90px;
+
+  /* 🔑 サイズ固定 */
+  --cta-width: 260px;
+  --cta-height: 70px;
   --cta-font-size: 18px;
+  
   --cta-border-radius: 6px;
   --cta-bottom-position: 0%;
   --cta-gap: 35px;
@@ -21,8 +24,8 @@
   /* ======================== */
   /* CTA：全画面時 */
   /* ======================== */
-  --cta-fs-padding-y: 55px;
-  --cta-fs-padding-x: 200px;
+  --cta-fs-width: 420px;
+  --cta-fs-height: 110px;
   --cta-fs-font-size: 28px;
   --cta-fs-bottom-position: 0%;
   --cta-fs-gap: 60px;
@@ -105,15 +108,20 @@ body {
   /* 🔑 シークバー優先 */
   pointer-events: none;
 
-  /* video controls より下 */
   z-index: 5;
 }
 
-/* CTAボタン本体だけクリック可能 */
+/* CTAボタン本体 */
 .cta-buttons-overlay-bottom button {
   pointer-events: auto;
 
-  padding: var(--cta-padding-y) var(--cta-padding-x);
+  width: var(--cta-width);
+  height: var(--cta-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: var(--cta-font-size);
   border-radius: var(--cta-border-radius);
   border: 2px solid var(--cta-bg-color);
@@ -123,10 +131,9 @@ body {
   opacity: var(--cta-opacity-enabled);
   transition: opacity 0.3s, background-color 0.3s;
 
-  /* 常に横書き */
-  writing-mode: horizontal-tb;
-  text-orientation: mixed;
+  /* 文字制御 */
   white-space: nowrap;
+  text-align: center;
 }
 
 .cta-buttons-overlay-bottom button:disabled {
@@ -164,6 +171,7 @@ body {
 }
 
 .video-wrapper:fullscreen .cta-buttons-overlay-bottom button {
-  padding: var(--cta-fs-padding-y) var(--cta-fs-padding-x);
+  width: var(--cta-fs-width);
+  height: var(--cta-fs-height);
   font-size: var(--cta-fs-font-size);
 }
