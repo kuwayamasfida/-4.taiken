@@ -13,13 +13,13 @@
   --cta-opacity-disabled: 0.4;
 
   /* 🔑 サイズ固定 */
-  --cta-width: 260px;
-  --cta-height: 70px;
+  --cta-width: 200px;
+  --cta-height: 80px;
   --cta-font-size: 18px;
   
   --cta-border-radius: 6px;
-  --cta-bottom-position: 0%;
-  --cta-gap: 35px;
+  --cta-bottom-position: 10%;
+  --cta-gap: 25px;
 
   /* ======================== */
   /* CTA：全画面時 */
@@ -27,7 +27,7 @@
   --cta-fs-width: 420px;
   --cta-fs-height: 110px;
   --cta-fs-font-size: 28px;
-  --cta-fs-bottom-position: 0%;
+  --cta-fs-bottom-position: 10%;
   --cta-fs-gap: 60px;
 
   /* ======================== */
