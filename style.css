@@ -5,20 +5,32 @@
   --z-index-overlay: 2147483647;
   --video-aspect-ratio: 56.25%; /* 16:9 */
 
-  /* CTA */
+  /* ======================== */
+  /* CTA：通常時 */
+  /* ======================== */
   --cta-bg-color: #007bff;
   --cta-text-color: #fff;
   --cta-opacity-enabled: 0.6;
   --cta-opacity-disabled: 0.4;
   --cta-padding-y: 14px;
-  --cta-padding-x: 80px;
+  --cta-padding-x: 120px;
   --cta-font-size: 18px;
   --cta-border-radius: 6px;
-
-  /* CTA位置 */
   --cta-bottom-position: 0%;
+  --cta-gap: 40px;
 
+  /* ======================== */
+  /* CTA：全画面時 */
+  /* ======================== */
+  --cta-fs-padding-y: 80px;
+  --cta-fs-padding-x: 3200px;
+  --cta-fs-font-size: 28px;
+  --cta-fs-bottom-position: 8%;
+  --cta-fs-gap:100px;
+
+  /* ======================== */
   /* Fullscreen */
+  /* ======================== */
   --fs-bg-color: #ff9900;
   --fs-font-size: 14px;
 }
@@ -81,7 +93,7 @@ body {
 }
 
 /* ======================== */
-/* CTA（動画内・下部・横並び） */
+/* CTA（通常時） */
 /* ======================== */
 .cta-buttons-overlay-bottom {
   position: absolute;
@@ -89,7 +101,7 @@ body {
   bottom: var(--cta-bottom-position);
   transform: translateX(-50%);
   display: flex;
-  gap: 40px;
+  gap: var(--cta-gap);
   z-index: var(--z-index-overlay);
 }
 
@@ -103,6 +115,11 @@ body {
   cursor: pointer;
   opacity: var(--cta-opacity-enabled);
   transition: opacity 0.3s, background-color 0.3s;
+
+  /* 🔒 文字は常に横書き */
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  white-space: nowrap;
 }
 
 .cta-buttons-overlay-bottom button:disabled {
@@ -129,4 +146,17 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* ======================== */
+/* CTA（全画面時） */
+/* ======================== */
+.video-wrapper:fullscreen .cta-buttons-overlay-bottom {
+  bottom: var(--cta-fs-bottom-position);
+  gap: var(--cta-fs-gap);
+}
+
+.video-wrapper:fullscreen .cta-buttons-overlay-bottom button {
+  padding: var(--cta-fs-padding-y) var(--cta-fs-padding-x);
+  font-size: var(--cta-fs-font-size);
 }
