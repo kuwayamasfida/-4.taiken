@@ -8,15 +8,15 @@
   /* CTA */
   --cta-bg-color: #007bff;
   --cta-text-color: #fff;
-  --cta-opacity-enabled: 0.85;
+  --cta-opacity-enabled: 0.6;
   --cta-opacity-disabled: 0.4;
   --cta-padding-y: 14px;
-  --cta-padding-x: 40px;
+  --cta-padding-x: 80px;
   --cta-font-size: 18px;
   --cta-border-radius: 6px;
 
   /* CTA位置 */
-  --cta-bottom-position: 6%;
+  --cta-bottom-position: 0%;
 
   /* Fullscreen */
   --fs-bg-color: #ff9900;
@@ -89,7 +89,7 @@ body {
   bottom: var(--cta-bottom-position);
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
+  gap: 40px;
   z-index: var(--z-index-overlay);
 }
 

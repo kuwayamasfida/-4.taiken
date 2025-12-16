@@ -60,7 +60,7 @@ function handleFullscreenChange() {
     document.webkitFullscreenElement ||
     document.mozFullScreenElement;
 
-  fullscreenButton.textContent = isFullscreen ? '全画面解除' : '全画面';
+  fullscreenButton.textContent = isFullscreen ? '全画面解除' : '全画面1';
 }
 
 /* =====================================
