@@ -11,18 +11,18 @@
   --cta-text-color: #fff;
   --cta-opacity-enabled: 0.6;
   --cta-opacity-disabled: 0.4;
-  --cta-padding-y: 20px;
-  --cta-padding-x: 100px;
+  --cta-padding-y: 25px;
+  --cta-padding-x: 90px;
   --cta-font-size: 18px;
   --cta-border-radius: 6px;
   --cta-bottom-position: 0%;
-  --cta-gap: 40px;
+  --cta-gap: 35px;
 
   /* ======================== */
   /* CTA：全画面時 */
   /* ======================== */
-  --cta-fs-padding-y: 60px;
-  --cta-fs-padding-x: 320px;
+  --cta-fs-padding-y: 55px;
+  --cta-fs-padding-x: 200px;
   --cta-fs-font-size: 28px;
   --cta-fs-bottom-position: 0%;
   --cta-fs-gap: 60px;
