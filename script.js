@@ -8,9 +8,9 @@ const fullscreenTarget = document.querySelector('.video-wrapper');
    CTAボタンの表示タイミング
 ===================================== */
 const ctaTimings = {
-  'btn-start':    { start: 5,  end: 15 },
-  'btn-contents': { start: 5,  end: 15 },
-  'btn-end':      { start: 5,  end: 15 }
+  'btn-start':    { start: 17.3,  end: 25 },
+  'btn-contents': { start: 17.3,  end: 25 },
+  'btn-end':      { start: 17.3,  end: 25 }
 };
 
 function updateButtonState() {
@@ -77,3 +77,4 @@ fullscreenButton.addEventListener('click', toggleFullscreen);
 document.addEventListener('fullscreenchange', handleFullscreenChange);
 document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
 document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+
